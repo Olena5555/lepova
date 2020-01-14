@@ -1,14 +1,15 @@
 <?php
 // ваши данные
-$db_server='localhost'; // название сервера
-$db_database='clients'; // название вашей базы данных
-$db_user=''; //при необходимости
-$db_password=''; //пароль,если есть
+$db_server='localhost';
+$db_database='clients';
+$db_user='root'; 
+$db_password='';
 
 //соединение с базой
-$connection=mysqli_connect($db_server, $db_database, $db_user, $db_password);
+$connection=mysqli_connect($db_server, $db_user, $db_password, $db_database);
+mysqli_select_db($connection, "clients");
 //контроль соединения
-if (!$connection) {
-	die("Не удается подключиться к базе данных");
+if (!$connection){
+	die ("Не удается подключиться к базе данных");
 }
 ?>
